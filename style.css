@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+.box img{
+    width: 100%;
+}
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -250px;
+    width: 100px;
+    height: 100%;
+    background: #ffffff1f;
+    transform: skewX(-30deg);
+    transition: 2s;
+    animation: animate 4s ease-in-out infinite;
+}
+
+
+.box:hover::before{
+    left: 250px;
+}
+
+footer{
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    color: #ffffff8e;
+    font-size: 1.4rem;
+    width: 100%;
+    background: #000;
+}
+footer p{
+    margin: 5px;
+    padding: 5px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    @keyframes animate {
+        100%{
+            left: 250px;
+        }
+    }
+}
